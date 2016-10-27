@@ -77,21 +77,38 @@ public:
 
     int find(const char *str, int start = 0) {
         const char *temp_str = elements + start;
-        return static_kmp_find(temp_str, str) + start;
+        int loc = static_kmp_find(temp_str, str);
+        return loc == CANNOT_BE_FOUND ? CANNOT_BE_FOUND : loc + start;
     }
 
-//    void replace(const char *old, const char *new_one) {
-//
-//    }
+   void replace(const char *old, const char *new_one) {
+       int len_old = (int) strlen(old);
+       int len_new = (int) strlen(new_one);
+
+       if (len_old != len_new)
+           throw IllegalParameterValue();
+
+       int loc = find(old);
+
+       while (loc != CANNOT_BE_FOUND) {
+           for (int i = loc; i < loc + len_old; i++) {
+               elements[i] = new_one[i - loc];
+           }
+
+           loc = find(old, loc + len_old);
+       }
+   }
 
 private:
     static int static_kmp_find(const char *str, const char *pattern) {
         int length_str = (int) strlen(str);
         int length_pattern = (int) strlen(pattern);
         if (length_pattern > length_str)
-            throw IllegalParameterValue();
+//            throw IllegalParameterValue();
+            return CANNOT_BE_FOUND;
 
-        int *next = static_get_next(pattern);
+        int *next = new int[strlen(pattern)];
+        static_get_next(pattern, next);
 
         int i = 0, j = 0;
 
@@ -104,14 +121,14 @@ private:
             }
         }
 
+        delete(next);
         if (j == length_pattern)
             return i - j;
         return CANNOT_BE_FOUND;
     }
 
-    static int * static_get_next(const char *str) {
+    static int * static_get_next(const char *str, int *next) {
         int length = (int) strlen(str);
-        int *next = new int[length];
 
         next[0] = -1;
         int k = -1, j = 0;

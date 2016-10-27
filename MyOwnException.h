@@ -2,7 +2,6 @@
 #define MY_OWN_EXCEPTION_H
 
 #include <stdexcept>
-#include <altivec.h>
 
 using std::runtime_error;
 
