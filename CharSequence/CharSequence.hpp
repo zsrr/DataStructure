@@ -6,9 +6,8 @@
 #ifndef DATASTRUCTURES_CHARSEQUENCE_HPP
 #define DATASTRUCTURES_CHARSEQUENCE_HPP
 
-#include <algorithm>
 #include <ostream>
-#include "../LinearList/ArrayList.h"
+#include "../LinearList/ArrayList.hpp"
 #include "../MyOwnException.h"
 
 using std::ostream;

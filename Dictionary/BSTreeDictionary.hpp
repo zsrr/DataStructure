@@ -20,7 +20,7 @@ public:
     ~BSTreeDictionary() {
         if (root == nullptr || treeSize == 0)
             return;
-        LinkedBinaryTree<pair<const K, E>> lbt(root, treeSize);
+        LinkedBinaryTree<pair<const K, E>> lbt(root);
         lbt.~LinkedBinaryTree();
     }
 

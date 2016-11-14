@@ -6,7 +6,7 @@
 #define DATASTRUCTURES_LISTQUEUE_HPP
 
 #include "AbsQueue.hpp"
-#include "../LinearList/LinkedList.h"
+#include "../LinearList/LinkedList.hpp"
 #include "../MyOwnException.h"
 
 template <class T>

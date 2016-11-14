@@ -1,22 +1,27 @@
 
 #include <iostream>
-#include "CharSequence/CharSequence.hpp"
+#include "Graphics/AdjacencyWDiGraph.hpp"
+
+#define NO_EDGE -100000
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::string;
+
+void visit(const int& n) {
+    cout << n << " ";
+}
 
 int main() {
-    CharSequence *cs = new CharSequence("This This This This This");
-    cout << *cs << endl;
-    cs->replace("This", "News");
-    cs->append("Success");
-    cout << cs->getLength() << endl;
-    cout << cs->find('N', 11) << endl;
-    cout << cs->find("News", 11) << endl;
-    cout << *cs << endl;
-    cs->replace('N', 'M');
-    cout << *cs << endl;
-    delete(cs);
+    AdjacencyWDiGraph<int> *awdg = new AdjacencyWDiGraph<int>(10, NO_EDGE);
+    awdg->insertEdge({1, 2, 10});
+    awdg->insertEdge({2, 3, 40});
+    awdg->insertEdge({4, 5, 50});
+    int *reach = new int[awdg->numberOfVertexes()];
+    awdg->bfs(1, reach, 10, visit);
+    cout << endl;
+    awdg->dfs(1, reach, 11, visit);
+    delete(awdg);
     return 0;
 }

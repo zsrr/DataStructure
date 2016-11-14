@@ -14,9 +14,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Dictionary/BSTreeDictionary.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graphics/AdjacencyWDiGraph.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graphics/AbsGraph.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/LinearList/ArrayList.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LinearList/LinearList.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinkedList.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearList/ArrayList.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinkedList.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/ArrayQueue.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/AbsQueue.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/ListQueue.hpp" isTestSource="false" />

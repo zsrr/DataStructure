@@ -132,8 +132,8 @@ public:
 
     virtual void dfs(int vertex, int *reach, int label,
                      void (*visit)(const int &)) const override {
-        AbsGraph::reach = reach;
-        AbsGraph::label = label;
+        static_reach = reach;
+        static_label = label;
         rDfs(vertex, visit);
     }
 
@@ -143,6 +143,8 @@ protected:
     T **a;
     //这个需要自己定义，这个泛型一般来说是数字类型
     T noEdge;
+    static int *static_reach;
+    static int static_label;
 
     void fill2dArray() {
         for (int i = 0; i < n + 1; i++)
@@ -156,20 +158,21 @@ protected:
     }
 
     virtual void rDfs(int vertex, void (*visit)(const int &)) const override {
-        reach[vertex] = label;
+        static_reach[vertex] = static_label;
         visit(vertex);
 
         VertexIterator<T> *vi = getIterator(vertex);
         int u;
         while ((u = vi->next()) != -1)
-            if (reach[u] != label)
+            if (static_reach[u] != static_label)
                 rDfs(u, visit);
         delete(vi);
     }
 
-    class AdjacencyWDiGraphIterator : public VertexIterator<T> {
+    template <class E>
+    class AdjacencyWDiGraphIterator : public VertexIterator<E> {
     public:
-        AdjacencyWDiGraphIterator(T *a, int n, T noEdge): a(a), n(n), noEdge(noEdge), currentVertex(1) {}
+        AdjacencyWDiGraphIterator(E *a, int n, E noEdge): a(a), n(n), noEdge(noEdge), currentVertex(1) {}
 
         virtual int next() override {
             for (int i = currentVertex; i <= n; i++)
@@ -181,7 +184,7 @@ protected:
             return -1;
         }
 
-        virtual int next(T &t) override {
+        virtual int next(E &t) override {
             for (int i = currentVertex; i <= n; i++)
                 if (a[i] != noEdge) {
                     currentVertex = i + 1;
@@ -193,10 +196,10 @@ protected:
         }
 
     private:
-        T *a;
+        E *a;
         int n;
         int currentVertex;
-        T noEdge;
+        E noEdge;
     };
 };
 

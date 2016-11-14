@@ -59,8 +59,8 @@ public:
                      int label, void (*visit)(const int&)) const = 0;
 
 protected:
-    static int *reach;
-    static int label;
+//    static int *reach;
+//    static int static_label;
 
     virtual void rDfs(int vertex, void (*visit)(const int &)) const = 0;
 };

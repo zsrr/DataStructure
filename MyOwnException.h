@@ -55,4 +55,9 @@ public:
     UnsupportedOperation() : runtime_error("不支持此操作"){}
 };
 
+class ListEmptyException : public runtime_error {
+public:
+    ListEmptyException() : runtime_error("表是空的");
+};
+
 #endif // !MY_OWN_EXCEPTION_H
