@@ -5,10 +5,16 @@
 #ifndef DATASTRUCTURES_MAXPRIORITYQUEUE_HPP
 #define DATASTRUCTURES_MAXPRIORITYQUEUE_HPP
 
+#include <algorithm>
+
+using std::copy;
+
 template<class T>
 class PriorityQueue {
 public:
-    virtual ~PriorityQueue() {}
+    virtual ~PriorityQueue() {
+        delete[](heap);
+    }
 
     virtual bool empty() const = 0;
 
@@ -19,6 +25,19 @@ public:
     virtual void pop() = 0;
 
     virtual void push(const T &element) = 0;
+
+protected:
+    T *heap;
+    int arrayLength;
+    int heapSize;
+
+    void changeLength() {
+        T *newArray = new T[arrayLength * 2];
+        copy(heap + 1, heap + arrayLength, newArray + 1);
+        arrayLength *= 2;
+        delete[] heap;
+        heap = newArray;
+    }
 };
 
 #endif //DATASTRUCTURES_MAXPRIORITYQUEUE_HPP

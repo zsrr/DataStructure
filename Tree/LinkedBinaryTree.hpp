@@ -20,10 +20,9 @@ struct BinaryTreeNode {
     }
 
     BinaryTreeNode(const T &theElement, BinaryTreeNode<T> *const left,
-                   BinaryTreeNode<T> *const right) : element(theElement) {
-        leftChild = left;
-        rightChild = right;
-    }
+                   BinaryTreeNode<T> *const right) : element(theElement), leftChild(left), rightChild(right) {}
+
+    BinaryTreeNode() : element(), leftChild(), rightChild() {}
 };
 
 template<class E>
@@ -35,6 +34,16 @@ public:
     LinkedBinaryTree(BinaryTreeNode<E> *const theRoot) {
         //指向了同一块内存！
         root = theRoot;
+    }
+
+    LinkedBinaryTree() : root() {}
+
+    void makeTree(E element, const LinkedBinaryTree<E> &leftChild,
+                  const LinkedBinaryTree<E> &rightChild) {
+        if (root != nullptr) {
+            delete root;
+        }
+        root = new BinaryTreeNode<E>(element, &leftChild, &rightChild);
     }
 
     virtual int height() const override {

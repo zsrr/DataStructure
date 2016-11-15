@@ -4,7 +4,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Stack/Stack.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Stack/ArrayStack.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MyOwnException.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinearList.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearList/ArrayList.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinkedList.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Dictionary/AbsDictionary.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Dictionary/HashChainsDictionary.hpp" isTestSource="false" />
@@ -14,19 +16,20 @@
       <sourceFolder url="file://$MODULE_DIR$/Dictionary/BSTreeDictionary.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graphics/AdjacencyWDiGraph.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graphics/AbsGraph.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinearList.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/LinearList/ArrayList.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/LinearList/LinkedList.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MyOwnException.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/PriorityQueue.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/test.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/MaxPriorityQueue.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/MinPriorityQueue.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/ArrayQueue.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/AbsQueue.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Queue/ListQueue.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/PriorityQueue.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/PriorityQueue/MaxPriorityQueue.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tree/MaxWinnerTree.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tree/LinkedBinaryTree.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tree/AbsBinaryTree.hpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Tree/ArrayBinaryTree.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/HuffmanTree.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tree/WinnerTree.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/LinkedBinaryTree.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/MaxWinnerTree.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/ArrayBinaryTree.hpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Tree/AbsBinaryTree.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CharSequence/CharSequence.hpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/utils.hpp" isTestSource="false" />

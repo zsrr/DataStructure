@@ -20,12 +20,12 @@ public:
         this->n = n;
         this->noEdge = noEdge;
         e = 0;
-        make2dArray(a, n + 1, n + 1);
+        util::make2dArray(a, n + 1, n + 1);
         fill2dArray();
     }
 
     ~AdjacencyWDiGraph() {
-        dispose2dArray(a, n + 1);
+        util::dispose2dArray(a, n + 1);
     }
 
     virtual int numberOfVertexes() const override {
@@ -130,11 +130,9 @@ public:
         }
     }
 
-    virtual void dfs(int vertex, int *reach, int label,
+    virtual void dfs(int vertex, int reach[], int label,
                      void (*visit)(const int &)) const override {
-        static_reach = reach;
-        static_label = label;
-        rDfs(vertex, visit);
+        rDfs(vertex, reach, label, visit);
     }
 
 protected:
@@ -143,8 +141,6 @@ protected:
     T **a;
     //这个需要自己定义，这个泛型一般来说是数字类型
     T noEdge;
-    static int *static_reach;
-    static int static_label;
 
     void fill2dArray() {
         for (int i = 0; i < n + 1; i++)
@@ -157,15 +153,15 @@ protected:
             throw IllegalParameterValue();
     }
 
-    virtual void rDfs(int vertex, void (*visit)(const int &)) const override {
-        static_reach[vertex] = static_label;
+    virtual void rDfs(int vertex, int reach[], int label, void (*visit)(const int &)) const override {
+        reach[vertex] = label;
         visit(vertex);
 
         VertexIterator<T> *vi = getIterator(vertex);
         int u;
         while ((u = vi->next()) != -1)
-            if (static_reach[u] != static_label)
-                rDfs(u, visit);
+            if (reach[u] != label)
+                rDfs(u, reach, label, visit);
         delete(vi);
     }
 

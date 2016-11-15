@@ -57,7 +57,7 @@ public:
 
 class ListEmptyException : public runtime_error {
 public:
-    ListEmptyException() : runtime_error("表是空的");
+    ListEmptyException() : runtime_error("表是空的") {}
 };
 
 #endif // !MY_OWN_EXCEPTION_H

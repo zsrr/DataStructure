@@ -62,7 +62,7 @@ protected:
 //    static int *reach;
 //    static int static_label;
 
-    virtual void rDfs(int vertex, void (*visit)(const int &)) const = 0;
+    virtual void rDfs(int vertex, int reach[], int label, void (*visit)(const int &)) const = 0;
 };
 
 #endif //DATASTRUCTURES_ABSGRAPHICS_HPP

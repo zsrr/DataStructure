@@ -6,15 +6,17 @@
 #define DATASTRUCTURES_MAXHEAP_HPP
 
 
-#include <deque>
 #include "PriorityQueue.hpp"
 #include "../MyOwnException.h"
-
-using std::copy;
 
 template<class T>
 class MaxPriorityQueue : public PriorityQueue<T> {
 public:
+    using PriorityQueue<T>::arrayLength;
+    using PriorityQueue<T>::heap;
+    using PriorityQueue<T>::heapSize;
+    using PriorityQueue<T>::changeLength;
+
     MaxPriorityQueue(int capacity = 10) {
         if (capacity <= 0) {
             throw IllegalParameterValue();
@@ -91,19 +93,6 @@ public:
             }
             heap[child / 2] = root;
         }
-    }
-
-private:
-    T *heap;
-    int arrayLength;
-    int heapSize;
-
-    void changeLength() {
-        T *newArray = new T[arrayLength * 2];
-        copy(heap + 1, heap + arrayLength, newArray + 1);
-        arrayLength *= 2;
-        delete[] heap;
-        heap = newArray;
     }
 };
 
